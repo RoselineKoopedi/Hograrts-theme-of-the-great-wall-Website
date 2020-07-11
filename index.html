@@ -1,0 +1,72 @@
+   <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Christmas Theme</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="Hogrartscss.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <h2 id="slytherin"></h2>
+        <div class="pic1"></div>
+        <h2 id="gryffindor"></h2>
+        <div id="timer"></div>
+        <script language="javascript">
+            setInterval(counter,500);
+            function counter()
+            {
+                var time = new Date();
+                var hours = time.getHours();
+                var minutes =time.getMinutes();
+                var seconds = time.getSeconds();
+                if(hours > 12)
+                {
+                    hours =hours -12;
+                }
+                if(hours === 0)
+                {
+                    hours = 12;
+                }
+                if (hours < 10)
+                {
+                    hours = '0'+hours;
+                }
+                if (minutes < 10)
+                {
+                    minutes = '0'+minutes;
+                }
+                if(seconds < 10)
+                {
+                    seconds = '0'+seconds;
+                }
+                
+                document.getElementById("timer").innerHTML= hours +":"+ minutes +":"+ seconds;
+               
+                if (seconds < 30) 
+                {
+                 document.body.style.backgroundImage="url('Darco.jpg')";
+                 
+                 document.getElementById("slytherin").innerHTML ="Slytherin rules and Griffindor Drools";
+                }
+                else
+                {
+                    document.getElementById("slytherin").innerHTML ="";
+                }
+               if(seconds>30)
+                {
+                    document.body.style.backgroundImage="url('Harry.jpg')";
+                    document.getElementById("gryffindor").innerHTML ="Griffindor Wins Again";
+                }
+                else
+                {
+                    document.getElementById("gryffindor").innerHTML ="";
+                }
+    }
+        </script>
+    </body>
+</html>
